@@ -1,0 +1,16 @@
+on: push
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: echo "Answer to the Ultimate Question of Life, the Universe, and Everything" > 42.txt
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: test-artifact
+          path: 42.txt
+
